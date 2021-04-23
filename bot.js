@@ -11,10 +11,11 @@ const bot = new TelegramBot(token, { polling: true });
 (async () => {
   try {
     const now = new Date();
-    const res = await axios.get("https://api.zilstream.com/tokens/port");
-    const data = res.data;
+    
 
     while (true) {
+      const res = await axios.get("https://api.zilstream.com/tokens/port");
+      const data = res.data;
       const usdvalue = data.rate_usd.toFixed(2);
       const zilvalue = data.rate.toFixed(3);
       const persen = data.market_data.change_24h.toFixed(2);
