@@ -16,7 +16,7 @@ const bot = new TelegramBot(token, { polling: true });
 
     while (true) {
       const usdvalue = data.rate_usd.toFixed(2);
-      const zilvalue = data.rate_usd.toFixed(3);
+      const zilvalue = data.rate.toFixed(3);
       const persen = data.market_data.change_24h.toFixed(2);
       //  ? bot.on("message", (msg) => {
       //  ?  //get chat id
@@ -26,7 +26,7 @@ const bot = new TelegramBot(token, { polling: true });
       //  ? });
       let waktu = date.format(now, "YYYY/MM/DD HH:mm:ss");
       const pesan = `Price ZIL: ${zilvalue}\nPrice USD: ${usdvalue}$( ${persen}% )\nUpdate On:  ${waktu}\n\nWait 5 Minute to next msg`;
-      const chatId = ID CHAT U;
+      const chatId = ID CHAT u;
       console.log(chatId);
       bot.sendMessage(chatId, pesan);
       await delay(300000);
